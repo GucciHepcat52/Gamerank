@@ -21,4 +21,6 @@ Gamerank is an app that allows users to for video games by name, genre, and game
 
 ## Database:
 
-- User information
+- User table
+- Game table
+- Wishlist table
