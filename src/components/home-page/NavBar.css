@@ -10,7 +10,7 @@
   padding: 10px;
 }
 
-h1 {
+.title-home {
     font-size: 70px;
     border-bottom: 3px solid black;
     width: 100%;
@@ -20,4 +20,20 @@ h1 {
     border-bottom: 3px solid black;
     display: flex;
     justify-content: center;
+}
+
+.hello-box > h2 {
+  margin-bottom: 30px;
+}
+
+#wishlist {
+  align-self: center;
+  margin-top: 30px;
+}
+
+#logout {
+  margin-top: 625px;
+  align-self: center;
+  text-decoration: none;
+  color: black;
 }

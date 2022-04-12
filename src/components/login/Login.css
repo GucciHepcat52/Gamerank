@@ -25,7 +25,7 @@
   z-index: 1;
 }
 
-h1 {
+.title-login {
     font-size: 82px;
     align-self: center;
     -webkit-text-stroke-width: .15px;

@@ -7,7 +7,7 @@ export default function Login() {
   return (
     <div className="login">
         <div className="login-box">
-          <h1>GAMERANK</h1>
+          <h1 className="title-login">GAMERANK</h1>
           <form>
             <input type="text" placeholder="Enter Username..." required />
             <input type="password" placeholder="Enter Password..." required />
