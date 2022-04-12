@@ -1,0 +1,23 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20%;
+  border: 5px #a84046 solid;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+h1 {
+    font-size: 70px;
+    border-bottom: 3px solid black;
+    width: 100%;
+}
+
+.hello-box {
+    border-bottom: 3px solid black;
+    display: flex;
+    justify-content: center;
+}
