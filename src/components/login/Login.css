@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400&family=Satisfy&display=swap");
+
+* {
+  margin: 0;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.login {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.login-box {
+  box-sizing: border-box;
+  background-color: white;
+  border: 5px #a84046 solid;
+  height: 450px;
+  width: 500px;
+  align-self: center;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+h1 {
+    font-size: 82px;
+    align-self: center;
+    -webkit-text-stroke-width: .15px;
+    -webkit-text-stroke-color: #a84046;
+    margin-bottom: 35px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > input {
+    height: 32px;
+    margin-bottom: 25px;
+    background-color: #EEEEEE;
+    padding: 5px;
+    text-indent: 5px;
+    font-size: 18px;
+}
+
+form > button {
+    height: 45px;
+    margin-bottom: 25px;
+    background-color: #EEEEEE;
+    font-size: 18px;
+    width: 50%;
+    align-self: center;
+    margin-top: 20px;
+    color: white;
+    background-color: #a84046;
+    cursor: pointer;
+}
+
+.account-link {
+    align-self: flex-end;
+}
+
+.video-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
