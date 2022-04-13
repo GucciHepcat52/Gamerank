@@ -1,11 +1,14 @@
 import React from "react";
-import "../home-page/Home.css";
-import NavBar from "../home-page/NavBar";
+import "./Home.css";
+import NavBar from "./NavBar";
+import SearchPage from "./SearchPage";
+// import Wishlist from "./Wishlist";
 
 export default function Home() {
   return (
     <div className="home">
       <NavBar />
+      <SearchPage />
     </div>
   );
 }

@@ -15,7 +15,9 @@ export default function NavBar() {
       <div className="hello-box">
         <h2>Hello, {username}!</h2>
       </div>
-      <h3 id="wishlist">+ Your Wishlist</h3>
+      <Link to="/wishlist" id="wishlist">
+        <h3>+ Your Wishlist</h3>
+      </Link>
       <Link to="/" id="logout">
         <button onClick={handleLogout}>Logout</button>
       </Link>

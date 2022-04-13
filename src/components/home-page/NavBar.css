@@ -1,7 +1,6 @@
 .navbar {
-  position: absolute;
-  top: 0;
-  bottom: 0;
+  position: relative;
+  height: 100vh;
   width: 20%;
   border: 5px #a84046 solid;
   box-sizing: border-box;
@@ -14,6 +13,8 @@
     font-size: 4.5em;
     border-bottom: 3px solid black;
     width: 100%;
+    -webkit-text-stroke-width: .15px;
+    -webkit-text-stroke-color: #a84046;
 }
 
 .hello-box {
@@ -26,6 +27,8 @@
 #wishlist {
   align-self: center;
   margin-top: 30px;
+  text-decoration: none;
+  color: black;
 }
 
 #logout {
