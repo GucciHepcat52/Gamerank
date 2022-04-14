@@ -1,5 +1,4 @@
 require("dotenv").config();
-const path = require("path");
 const bcrypt = require("bcryptjs");
 const Sequelize = require("sequelize");
 const { CONNECTION_STRING } = process.env;
@@ -81,5 +80,17 @@ module.exports = {
     } catch (error) {
       res.status(400).send(error);
     }
+  },
+  getWishlist: async (req, res) => {
+    const { id } = req.query;
+    await sequelize
+      .query(
+        `
+      SELECT * FROM wishlist
+      WHERE user_id = ${id};
+    `
+      )
+      .then((dbRes) => res.status(200).send(dbRes[0]))
+      .catch((error) => res.status(400).send(error));
   },
 };

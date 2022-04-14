@@ -19,7 +19,7 @@ export default function NavBar() {
         <h3>+ Your Wishlist</h3>
       </Link>
       <Link to="/" id="logout">
-        <button onClick={handleLogout}>Logout</button>
+        <button onClick={handleLogout} id="logout-btn">Logout</button>
       </Link>
     </div>
   );

@@ -37,3 +37,12 @@
   text-decoration: none;
   color: black;
 }
+
+#logout-btn {
+  color: black;
+  border: none;
+  font-size: 1.2em;
+  background-color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
