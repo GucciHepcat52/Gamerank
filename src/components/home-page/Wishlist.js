@@ -26,7 +26,9 @@ export default function Wishlist() {
         <h1>Your Wishlist</h1>
         <h3>Items in list: {data.length}</h3>
       </div>
-      <ListItem data={data} />
+      {data.map((game) => {
+        return <ListItem key={game.id} data={game}/>
+      })}
     </div>
   );
 }
