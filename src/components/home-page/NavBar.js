@@ -15,7 +15,7 @@ export default function NavBar() {
       <div className="hello-box">
         <h2>Hello, {username}!</h2>
       </div>
-      <Link to="/wishlist" id="wishlist">
+      <Link to="/home/wishlist" id="wishlist">
         <h3>+ Your Wishlist</h3>
       </Link>
       <Link to="/" id="logout">

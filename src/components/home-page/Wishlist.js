@@ -5,29 +5,30 @@ import ListItem from "./ListItem";
 import { Link } from "react-router-dom";
 
 export default function Wishlist() {
-  const id = window.localStorage.getItem("Gamerank-user");
   const [data, setData] = useState([]);
+  console.log(data)
 
   useEffect(() => {
+    const id = window.localStorage.getItem("Gamerank-user");
     const fetchData = async () => {
       const res = await axios.get(`/api/wishlist?id=${id}`);
       setData(res.data);
     };
 
     fetchData().catch(console.error);
-  }, [id]);
+  }, []);
 
   return (
     <div className="wishlist">
       <Link to="/home" id="back-home">
-        <h3>Back to homepage</h3>
+        <h3>Back to home</h3>
       </Link>
       <div className="header">
         <h1>Your Wishlist</h1>
         <h3>Items in list: {data.length}</h3>
       </div>
       {data.map((game) => {
-        return <ListItem key={game.id} data={game}/>
+        return <ListItem data={game} key={game.list_id} />
       })}
     </div>
   );
