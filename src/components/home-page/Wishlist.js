@@ -19,7 +19,7 @@ export default function Wishlist(props) {
   }, []);
 
   function handleHomeClick() {
-    props.setDisplay(true);
+    props.setDisplay((prevDisplay) => prevDisplay ? true : true);
   }
 
   return (
