@@ -3,9 +3,8 @@ import "./Results.css";
 import { Link } from "react-router-dom";
 
 export default function Results(props) {
-
   function handleHomeClick() {
-    props.setDisplay(!props.display)
+    props.setDisplay(!props.display);
   }
 
   return (
@@ -15,7 +14,7 @@ export default function Results(props) {
       </Link>
       <div className="header">
         <h1>Your Results</h1>
-        <h3>Items in list: 2</h3>
+        <h3>Items in list: {props.games.length}</h3>
       </div>
     </div>
   );
