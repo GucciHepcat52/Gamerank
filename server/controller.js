@@ -93,4 +93,35 @@ module.exports = {
       .then((dbRes) => res.status(200).send(dbRes[0]))
       .catch((error) => res.status(400).send(error));
   },
+  addGame: (req, res) => {
+    const {
+      id,
+      game_name,
+      image,
+      developer,
+      release_date,
+      description,
+      platforms,
+      genres,
+    } = req.body;
+    const newDescription = description.replace(/["']/g, "");
+    const newPlatforms = JSON.stringify(platforms)
+      .replace(/\[/g, "{")
+      .replace(/]/g, "}");
+    const newGenres = JSON.stringify(genres)
+      .replace(/\[/g, "{")
+      .replace(/]/g, "}");
+
+    sequelize
+      .query(
+        `
+      INSERT INTO wishlist
+      (user_id, game_name, image, developer, release_date, description, platforms, genres)
+      VALUES
+      (${id}, '${game_name}', '${image}', '${developer}', '${release_date}', '${newDescription}', '${newPlatforms}', '${newGenres}');
+    `
+      )
+      .then((dbRes) => res.status(200).send(dbRes[0]))
+      .catch((error) => console.log(error));
+  },
 };

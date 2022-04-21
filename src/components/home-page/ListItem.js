@@ -3,12 +3,15 @@ import "./ListItem.css";
 
 export default function ListItem(props) {
   const description = props.data.description.slice(0, 502) + "...";
+
+  function removeGame(event) {
+    event.preventDefault();
+    console.log('clicked')
+  }
+
   return (
     <div className="list-item">
-      <img
-        src="https://media.rawg.io/media/games/3a0/3a0c8e9ed3a711c542218831b893a0fa.jpg"
-        alt="game-pic"
-      />
+      <img src={props.data.image} alt="game-pic" />
       <div className="info-box">
         <div className="info">
           <h3 id="game-name">{props.data.game_name}</h3>
@@ -16,7 +19,7 @@ export default function ListItem(props) {
           <p>Release Date: {props.data.release_date}</p>
           <p>{description}</p>
         </div>
-        <button>Remove From List</button>
+        <button onClick={removeGame}>Remove From List</button>
       </div>
     </div>
   );

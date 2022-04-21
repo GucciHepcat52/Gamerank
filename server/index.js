@@ -19,6 +19,6 @@ app.get("/api/users", getUser);
 // Get wishlist info
 app.get("/api/wishlist", getWishlist);
 // Add game to wishlist
-// app.post("/api/wishlist", addGame);
+app.post("/api/wishlist", addGame);
 
 app.listen(4444, () => console.log(`Server running on port 4444`));
