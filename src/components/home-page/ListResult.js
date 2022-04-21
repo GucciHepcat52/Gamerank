@@ -18,7 +18,6 @@ export default function ListResult(props) {
     event.preventDefault();
     try {
       await axios.post("/api/wishlist", gameBody).then((res) => {
-        console.log(res);
         alert("Game was added successfully!");
       });
     } catch (error) {

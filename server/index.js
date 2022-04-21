@@ -7,6 +7,7 @@ const {
   getUser,
   getWishlist,
   addGame,
+  deleteGame,
 } = require("../server/controller");
 
 app.use(express.json());
@@ -20,5 +21,7 @@ app.get("/api/users", getUser);
 app.get("/api/wishlist", getWishlist);
 // Add game to wishlist
 app.post("/api/wishlist", addGame);
+// Delete game from wishlist
+app.delete("/api/wishlist/:id", deleteGame);
 
 app.listen(4444, () => console.log(`Server running on port 4444`));

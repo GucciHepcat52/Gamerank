@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 export default function Wishlist(props) {
   const [data, setData] = useState([]);
-  console.log(data);
 
   useEffect(() => {
     const id = window.localStorage.getItem("Gamerank-user");
@@ -17,6 +16,20 @@ export default function Wishlist(props) {
 
     fetchData().catch(console.error);
   }, []);
+
+  async function removeGame(event, id) {
+    event.preventDefault();
+    try {
+      await axios.delete(`/api/wishlist/${id}`).then((res) => {
+        const newData = data.filter((game) => game.list_id !== id);
+        setData(newData);
+        alert("Game removed!");
+      });
+    } catch (error) {
+      console.log(error);
+      console.log(error.response.data);
+    }
+  }
 
   function handleHomeClick() {
     props.setDisplay((prevDisplay) => prevDisplay ? true : true);
@@ -32,7 +45,7 @@ export default function Wishlist(props) {
         <h3>Items in list: {data.length}</h3>
       </div>
       {data.map((game) => {
-        return <ListItem data={game} key={game.list_id} />;
+        return <ListItem data={game} key={game.list_id} remove={removeGame} />;
       })}
     </div>
   );

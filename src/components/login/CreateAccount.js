@@ -29,7 +29,6 @@ export default function CreateAccount() {
 
     try {
       await axios.post("/api/users", newUser).then((res) => {
-        console.log(res);
         alert("Account was created successfully!");
       });
     } catch (error) {

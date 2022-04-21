@@ -124,4 +124,18 @@ module.exports = {
       .then((dbRes) => res.status(200).send(dbRes[0]))
       .catch((error) => console.log(error));
   },
+  deleteGame: async (req, res) => {
+    const { id } = req.params;
+    await sequelize
+      .query(
+        `
+      DELETE FROM wishlist
+      WHERE list_id = ${id}
+
+      RETURNING *;
+    `
+      )
+      .then((dbRes) => res.status(200).send(dbRes[0]))
+      .catch((error) => console.log(error));
+  },
 };

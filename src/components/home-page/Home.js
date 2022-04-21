@@ -57,7 +57,6 @@ export default function Home() {
       })
       setGames(genreList)
     }
-    console.log(games)
     setInput({
       game: "",
       platform: "",

@@ -1,13 +1,9 @@
 import React from "react";
 import "./ListItem.css";
+import axios from "axios";
 
 export default function ListItem(props) {
   const description = props.data.description.slice(0, 502) + "...";
-
-  function removeGame(event) {
-    event.preventDefault();
-    console.log('clicked')
-  }
 
   return (
     <div className="list-item">
@@ -19,7 +15,9 @@ export default function ListItem(props) {
           <p>Release Date: {props.data.release_date}</p>
           <p>{description}</p>
         </div>
-        <button onClick={removeGame}>Remove From List</button>
+        <button onClick={(e) => props.remove(e, props.data.list_id)}>
+          Remove From List
+        </button>
       </div>
     </div>
   );
