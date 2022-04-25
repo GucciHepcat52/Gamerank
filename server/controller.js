@@ -105,6 +105,7 @@ module.exports = {
       genres,
       website
     } = req.body;
+    const gameName = game_name.replace(/["']/g, "");
     const newDescription = description.replace(/["']/g, "");
     const newPlatforms = JSON.stringify(platforms)
       .replace(/\[/g, "{")
@@ -119,7 +120,7 @@ module.exports = {
       INSERT INTO wishlist
       (user_id, game_name, image, developer, release_date, description, platforms, genres, website)
       VALUES
-      (${id}, '${game_name}', '${image}', '${developer}', '${release_date}', '${newDescription}', '${newPlatforms}', '${newGenres}', '${website}');
+      (${id}, '${gameName}', '${image}', '${developer}', '${release_date}', '${newDescription}', '${newPlatforms}', '${newGenres}', '${website}');
     `
       )
       .then((dbRes) => res.status(200).send(dbRes[0]))
