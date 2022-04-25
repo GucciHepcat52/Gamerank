@@ -12,6 +12,7 @@ export default function ListResult(props) {
     description: props.data.description.slice(0, 502) + "...",
     platforms: props.data.platforms,
     genres: props.data.genres,
+    website: props.data.website
   };
 
   async function handleAdd(event) {
@@ -36,6 +37,13 @@ export default function ListResult(props) {
           <p>Release Date: {gameBody.release_date}</p>
           <p>{gameBody.description}</p>
         </div>
+        <a
+          href={gameBody.website}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Game Website
+        </a>
         <button onClick={handleAdd}>Add to Wishlist</button>
       </div>
     </div>

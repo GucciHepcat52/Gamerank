@@ -1,6 +1,5 @@
 import React from "react";
 import "./ListItem.css";
-import axios from "axios";
 
 export default function ListItem(props) {
   const description = props.data.description.slice(0, 502) + "...";
@@ -15,6 +14,13 @@ export default function ListItem(props) {
           <p>Release Date: {props.data.release_date}</p>
           <p>{description}</p>
         </div>
+        <a
+          href={props.data.website}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Game Website
+        </a>
         <button onClick={(e) => props.remove(e, props.data.list_id)}>
           Remove From List
         </button>

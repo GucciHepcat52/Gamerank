@@ -103,6 +103,7 @@ module.exports = {
       description,
       platforms,
       genres,
+      website
     } = req.body;
     const newDescription = description.replace(/["']/g, "");
     const newPlatforms = JSON.stringify(platforms)
@@ -116,9 +117,9 @@ module.exports = {
       .query(
         `
       INSERT INTO wishlist
-      (user_id, game_name, image, developer, release_date, description, platforms, genres)
+      (user_id, game_name, image, developer, release_date, description, platforms, genres, website)
       VALUES
-      (${id}, '${game_name}', '${image}', '${developer}', '${release_date}', '${newDescription}', '${newPlatforms}', '${newGenres}');
+      (${id}, '${game_name}', '${image}', '${developer}', '${release_date}', '${newDescription}', '${newPlatforms}', '${newGenres}', '${website}');
     `
       )
       .then((dbRes) => res.status(200).send(dbRes[0]))
