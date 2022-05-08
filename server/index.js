@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 // const path = require("path");
-const PORT =4444;
+const PORT = 4444;
 const app = express();
 const {
   createAccount,
